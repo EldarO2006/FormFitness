@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Форма Фитнес</string>
+    
+    <!-- Auth -->
+    <string name="login">Вход</string>
+    <string name="login_hint">Логин</string>
+    <string name="password_hint">Пароль</string>
+    <string name="enter">Войти</string>
+    
+    <!-- User -->
+    <string name="subscription">Абонемент</string>
+    <string name="remaining_days">Осталось дней: %d</string>
+    <string name="no_subscription">Нет активного абонемента</string>
+    <string name="group_classes">Групповые занятия</string>
+    <string name="my_bookings">Мои записи</string>
+    <string name="freeze_subscription">Заморозить абонемент</string>
+    <string name="freeze_confirm">Заморозить абонемент на неделю?</string>
+    <string name="freeze_used">Вы уже использовали заморозку в этом месяце</string>
+    <string name="freeze_success">Абонемент заморожен на неделю</string>
+    
+    <!-- Booking -->
+    <string name="book">Записаться</string>
+    <string name="cancel_booking">Отменить запись</string>
+    <string name="booked">Записан</string>
+    <string name="available">Доступно</string>
+    <string name="full">Нет мест</string>
+    <string name="booking_success">Вы успешно записаны</string>
+    <string name="booking_cancelled">Запись отменена</string>
+    <string name="same_day_only">Запись доступна только в день тренировки</string>
+    
+    <!-- Employee -->
+    <string name="schedule">Расписание</string>
+    <string name="add_class">Добавить занятие</string>
+    <string name="edit_class">Редактировать занятие</string>
+    <string name="assign_subscription">Привязать абонемент</string>
+    <string name="select_user">Выберите пользователя</string>
+    <string name="subscription_type">Тип абонемента</string>
+    
+    <!-- Admin -->
+    <string name="users">Пользователи</string>
+    <string name="statistics">Статистика</string>
+    <string name="settings">Настройки</string>
+    
+    <!-- Common -->
+    <string name="save">Сохранить</string>
+    <string name="cancel">Отмена</string>
+    <string name="delete">Удалить</string>
+    <string name="filter">Фильтр</string>
+    <string name="logout">Выход</string>
+    <string name="theme">Тема</string>
+    <string name="light_theme">Светлая</string>
+    <string name="dark_theme">Темная</string>
+    <string name="monday">Понедельник</string>
+    <string name="wednesday">Среда</string>
+    <string name="friday">Пятница</string>
+</resources>
