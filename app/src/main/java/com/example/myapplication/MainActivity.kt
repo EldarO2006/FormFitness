@@ -63,9 +63,7 @@ fun FitnessApp(
 ) {
     if (currentUser == null) {
         // Create new AuthViewModel each time we return to login screen
-        val authViewModel: AuthViewModel = remember {
-            viewModel(factory = AuthViewModelFactory(repository))
-        }
+        val authViewModel: AuthViewModel = viewModel(factory = AuthViewModelFactory(repository))
         val authState by authViewModel.uiState.collectAsState()
         var showRegister by remember { mutableStateOf(false) }
         
