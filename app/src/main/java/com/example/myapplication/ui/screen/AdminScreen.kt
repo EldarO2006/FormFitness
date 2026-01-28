@@ -35,8 +35,8 @@ fun AdminScreen(
                             contentDescription = "Тема"
                         )
                     }
-                    IconButton(onClick = onLogout) {
-                        Icon(Icons.Default.ExitToApp, contentDescription = "Выход")
+                    TextButton(onClick = onLogout) {
+                        Text("Выйти в авторизацию")
                     }
                 }
             )

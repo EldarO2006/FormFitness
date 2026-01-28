@@ -9,6 +9,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.myapplication.data.repository.FitnessRepository
 import com.example.myapplication.ui.screen.*
@@ -62,6 +63,7 @@ fun FitnessApp(
     onThemeToggle: () -> Unit
 ) {
     if (currentUser == null) {
+        val context = LocalContext.current
         // Create new AuthViewModel each time we return to login screen
         val authViewModel: AuthViewModel = viewModel(factory = AuthViewModelFactory(repository))
         val authState by authViewModel.uiState.collectAsState()

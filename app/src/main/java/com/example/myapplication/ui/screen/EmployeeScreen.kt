@@ -1,6 +1,8 @@
 package com.example.myapplication.ui.screen
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
@@ -43,8 +45,8 @@ fun EmployeeScreen(
                             contentDescription = "Тема"
                         )
                     }
-                    IconButton(onClick = onLogout) {
-                        Icon(Icons.Default.ExitToApp, contentDescription = "Выход")
+                    TextButton(onClick = onLogout) {
+                        Text("Выйти в авторизацию")
                     }
                 }
             )
@@ -128,6 +130,7 @@ fun ScheduleTab(
     onDelete: (GroupClass) -> Unit
 ) {
     var selectedDayFilter by remember { mutableStateOf<Int?>(null) }
+    val dayChipsScroll = rememberScrollState()
     
     val filteredClasses = if (selectedDayFilter != null) {
         classes.filter { it.dayOfWeek == selectedDayFilter }
@@ -142,6 +145,7 @@ fun ScheduleTab(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
+                .horizontalScroll(dayChipsScroll)
                 .padding(horizontal = 16.dp, vertical = 8.dp),
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
@@ -254,7 +258,10 @@ fun ScheduleItemCard(
         EditClassDialog(
             groupClass = groupClass,
             onDismiss = { showEditDialog = false },
-            onSave = { onUpdate(it) }
+            onSave = {
+                onUpdate(it)
+                showEditDialog = false
+            }
         )
     }
 }
@@ -487,7 +494,8 @@ fun AddClassDialog(
                     maxLines = 3
                 )
                 var selectedDay by remember { mutableStateOf(0) }
-                Row {
+                val chipsScroll = rememberScrollState()
+                Row(modifier = Modifier.horizontalScroll(chipsScroll)) {
                     listOf("Пн", "Ср", "Пт").forEachIndexed { index, day ->
                         FilterChip(
                             selected = selectedDay == index,
@@ -585,7 +593,8 @@ fun EditClassDialog(
                         else -> 0
                     }
                 ) }
-                Row {
+                val chipsScroll = rememberScrollState()
+                Row(modifier = Modifier.horizontalScroll(chipsScroll)) {
                     listOf("Пн", "Ср", "Пт").forEachIndexed { index, day ->
                         FilterChip(
                             selected = selectedDay == index,

@@ -37,11 +37,8 @@ fun UserScreen(
                             contentDescription = "Тема"
                         )
                     }
-                    IconButton(onClick = onLogout) {
-                        Icon(
-                            imageVector = Icons.Default.ExitToApp,
-                            contentDescription = "Выход"
-                        )
+                    TextButton(onClick = onLogout) {
+                        Text("Выйти в авторизацию")
                     }
                 }
             )
